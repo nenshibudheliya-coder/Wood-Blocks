@@ -159,7 +159,7 @@ export default function WoodBlockPuzzle() {
     const [touchPos, setTouchPos] = useState(null);
     const gridRef = useRef(null);
     const [cellSize, setCellSize] = useState(44);
-    
+
     // Milestone Popup States
     const [milestone, setMilestone] = useState({ level: 0, text: "" });
     const [showMilestone, setShowMilestone] = useState(false);
@@ -180,9 +180,9 @@ export default function WoodBlockPuzzle() {
         };
 
         if (level > milestone.level && level >= 1) {
-            setMilestone({ 
-                level, 
-                text: level <= 10 ? MILESTONE_MESSAGES[level] : "GODLIKE!" 
+            setMilestone({
+                level,
+                text: level <= 10 ? MILESTONE_MESSAGES[level] : "GODLIKE!"
             });
             setShowMilestone(true);
             setTimeout(() => {
