@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+    <defs>
+        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#5c321d"/>
+            <stop offset="100%" stop-color="#2a160a"/>
+        </linearGradient>
+        <linearGradient id="block" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f3d2a2"/>
+            <stop offset="100%" stop-color="#c19356"/>
+        </linearGradient>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.6"/>
+        </filter>
+    </defs>
+    <rect width="120" height="120" rx="28" fill="url(#bg)"/>
+    <rect width="120" height="120" rx="28" fill="none" stroke="#8b4513" stroke-width="6"/>
+    <!-- L-shaped Wooden Block -->
+    <path d="M 30,30 L 65,30 L 65,60 L 95,60 L 95,95 L 30,95 Z" fill="url(#block)" filter="url(#shadow)" stroke="#8b4513" stroke-width="4" stroke-linejoin="round"/>
+    
+    <!-- Grid/block inner lines -->
+    <line x1="30" y1="62.5" x2="65" y2="62.5" stroke="#8b4513" stroke-width="3"/>
+    <line x1="62.5" y1="62.5" x2="62.5" y2="95" stroke="#8b4513" stroke-width="3"/>
+    
+    <!-- Highlight edges for 3D feel -->
+    <path d="M 32,32 L 63,32 L 63,62 L 93,62" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+    <path d="M 32,32 L 32,93" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+</svg>

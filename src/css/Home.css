@@ -1,0 +1,140 @@
+.home-container {
+    width: 100vw;
+    height: 100vh;
+    background: #3e2414;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.transparenttextures.com/patterns/dark-wood.png');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.logo-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    transform: scale(1.2);
+}
+
+.logo-frame-top {
+    background: #5d3a1a;
+    border: 4px solid #8b4513;
+    border-radius: 15px 15px 0 0;
+    padding: 10px 40px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.logo-text {
+    color: #f3e5ab;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 0 #3b1e11;
+}
+
+.logo-banner {
+    background: #d4a76a;
+    background-image: linear-gradient(to right, #c19356, #d4a76a, #c19356);
+    border: 3px solid #8b4513;
+    padding: 10px 60px;
+    margin-top: -5px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    transform: perspective(500px) rotateX(5deg);
+    z-index: 3;
+    border-radius: 4px;
+}
+
+.logo-banner-text {
+    color: #3b1e11;
+    font-size: 52px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    filter: drop-shadow(1px 1px 0 rgba(255,255,255,0.3));
+}
+
+.logo-frame-base {
+    width: 80%;
+    height: 20px;
+    background: #5d3a1a;
+    border: 4px solid #8b4513;
+    border-top: none;
+    border-radius: 0 0 100px 100px;
+    margin-top: -5px;
+    z-index: 1;
+}
+
+.play-btn-wrapper {
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.1s, filter 0.2s;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.6));
+}
+
+.play-btn-wrapper:hover {
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.8)) brightness(1.1);
+}
+
+.play-btn-wrapper:active {
+    transform: scale(0.95);
+}
+
+.play-btn {
+    background: #c19356;
+    background-image: linear-gradient(to bottom, #d4a76a, #8b4513);
+    width: 220px;
+    height: 90px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #5d3a1a;
+    box-shadow: 0 8px 0 #3b1e11;
+    position: relative;
+}
+
+.play-icon {
+    width: 50px;
+    height: 50px;
+    fill: #fff;
+    filter: drop-shadow(0 4px 0 rgba(0,0,0,0.2));
+}
+
+.play-shadow {
+    position: absolute;
+    bottom: -12px;
+    left: 10px;
+    right: 10px;
+    height: 30px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.decor-top-left {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 100px;
+    opacity: 0.05;
+    transform: rotate(-15deg);
+}
+
+.decor-bottom-right {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    font-size: 120px;
+    opacity: 0.05;
+    transform: rotate(20deg);
+}
