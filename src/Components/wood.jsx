@@ -160,19 +160,36 @@ export default function WoodBlockPuzzle() {
     const gridRef = useRef(null);
     const [cellSize, setCellSize] = useState(44);
     
-    // Awesome Animation States
-    const [hasCrossed100, setHasCrossed100] = useState(false);
-    const [showAwesome, setShowAwesome] = useState(false);
+    // Milestone Popup States
+    const [milestone, setMilestone] = useState({ level: 0, text: "" });
+    const [showMilestone, setShowMilestone] = useState(false);
 
     useEffect(() => {
-        if (score >= 100 && !hasCrossed100) {
-            setHasCrossed100(true);
-            setShowAwesome(true);
+        const level = Math.floor(score / 100);
+        const MILESTONE_MESSAGES = {
+            1: "GOOD!",
+            2: "EXCELLENT!",
+            3: "AWESOME!",
+            4: "AMAZING!",
+            5: "UNBELIEVABLE!",
+            6: "BRILLIANT!",
+            7: "FANTASTIC!",
+            8: "SUPERB!",
+            9: "UNSTOPPABLE!",
+            10: "LEGENDARY!"
+        };
+
+        if (level > milestone.level && level >= 1) {
+            setMilestone({ 
+                level, 
+                text: level <= 10 ? MILESTONE_MESSAGES[level] : "GODLIKE!" 
+            });
+            setShowMilestone(true);
             setTimeout(() => {
-                setShowAwesome(false);
+                setShowMilestone(false);
             }, 3000);
         }
-    }, [score, hasCrossed100]);
+    }, [score, milestone.level]);
 
     useEffect(() => {
         const updateSize = () => {
@@ -325,8 +342,8 @@ export default function WoodBlockPuzzle() {
         setGrid(emptyGrid());
         setQueue(generateInitialQueue());
         setScore(0);
-        setHasCrossed100(false);
-        setShowAwesome(false);
+        setMilestone({ level: 0, text: "" });
+        setShowMilestone(false);
         setGameOver(false);
         setDragging(null);
         setGhostPos(null);
@@ -412,10 +429,10 @@ export default function WoodBlockPuzzle() {
                 </div>
             </div>
 
-            {/* Awesome Effect */}
-            {showAwesome && (
+            {/* Milestone Popup Effect */}
+            {showMilestone && (
                 <div className="awesome-effect">
-                    AWESOME!
+                    {milestone.text}
                 </div>
             )}
 
